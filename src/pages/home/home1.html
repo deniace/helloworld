@@ -3,11 +3,6 @@
     <ion-title>
       Ionic Blank (BUTTON)
     </ion-title>
-    <ion-buttons end>
-      <button ion-button icon-only (click)="presenPoper($event)">
-        <ion-icon name ="more"></ion-icon>
-      </button>
-    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
@@ -16,53 +11,9 @@
   <p>
     If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
   </p>
-  <!-- <ion-list *ngFor ="let tahi of users">
-    {{tahi.user}}
-  </ion-list> -->
 
-  <ion-list>
-    <ion-item>
-      <ion-input placeholder="Nama Kota" [(ngModel)]="namaKota"></ion-input>
-    </ion-item>
-  </ion-list>
-
-  <button no-margin ion-button block (click)="getDataCuaca()">tampilkan cuaca</button>
-
-  <ion-card no-margin>
-      <ion-item-divider color="light">
-        peta lokasi
-      </ion-item-divider>
-      <img src="https://maps.googleapis.com/maps/api/staticmap?center={{ namaKota }}&size=600x300"/>
-    </ion-card>
-
-  <ion-card no-margin>
-    <ion-item-divider color="light">
-      detil lokasi
-    </ion-item-divider>
-    <ion-item>kota : {{infoCuaca.name}}</ion-item>
-    <ion-item *ngIf="infoCuaca.sys">Kode Negara : {{infoCuaca.sys.country}}</ion-item>
-    <ion-item *ngIf="infoCuaca.coord">koordinat : {{ infoCuaca.coord.lon }} , {{infoCuaca.coord.lat}}</ion-item>
-  </ion-card>
-
-  <ion-card no-margin>
-    <ion-item-divider color="light">
-      detil cuaca
-    </ion-item-divider>
-    <ion-item *ngIf="infoCuaca.main">suhu tempratur : {{infoCuaca.main.temp}}</ion-item>
-    <ion-item *ngIf="infoCuaca.main">tekanan : {{ infoCuaca.main.pressure}}</ion-item>
-    <ion-item *ngIf="infoCuaca.main">kelembapan : {{infoCuaca.main.humidity}} %</ion-item>
-  </ion-card>
-
-  <ion-card no-margin *ngIf="infoCuaca.wind">
-      <ion-item-divider color="light" >
-        detil angin
-      </ion-item-divider>
-      <ion-item>kecepatan angin : {{ infoCuaca.wind.speed }}</ion-item>
-      <ion-item> sudut derajat arah angin : {{ infoCuaca.wind.deg }}</ion-item>
-    </ion-card>
-  
   <!-- <ion-button></ion-button> -->
-  <!-- <button ion-button >Default</button>
+  <button ion-button >Default</button>
 
   <button ion-button color="secondary">Secondary</button>
 
@@ -70,20 +21,20 @@
 
   <button ion-button color="light">Light</button>
 
-  <button ion-button color="dark">Dark</button> -->
+  <button ion-button color="dark">Dark</button>
 
   <!-- Shapes -->
-  <!-- <button ion-button full>Full Button</button>
+  <button ion-button full>Full Button</button>
 
   <button ion-button block icon-start>
     <ion-icon name="game-controller-b" color="secondary"></ion-icon> Block Button</button>
 
   <button ion-button round  icon-end>
-    <ion-icon name="game-controller-b"></ion-icon>Round Button</button> -->
+    <ion-icon name="game-controller-b"></ion-icon>Round Button</button>
     
 
     <!-- Outline -->
-  <!-- <button ion-button full outline>Outline + Full</button>
+  <button ion-button full outline>Outline + Full</button>
 
   <button ion-button block outline>Outline + Block</button>
 
@@ -94,7 +45,7 @@
   <button ion-button icon-end>
       Right Icon
       <ion-icon name="star"></ion-icon>
-    </button> -->
+    </button>
 
     <p>
         form
@@ -123,6 +74,7 @@
                 <ion-radio value="tidak" checked= "false"></ion-radio>
               </ion-item>
             </ion-list>
+        
         <button ion-button block >login</button>
 
         
@@ -133,12 +85,11 @@
             </ion-fab> -->
            
             <!-- Button shaped as a circle that just like a normal button scrolls with the content -->
-
-            <!-- <button ion-fab>Button</button> -->
+            <button ion-fab>Button</button>
 
             <!-- this fab is placed at bottom right -->
           
-            <!-- <ion-fab middle center >
+            <ion-fab middle center >
               <button ion-fab>fabButon</button>
               <ion-fab-list side="top">
                 <button ion-fab>a</button>
@@ -154,7 +105,9 @@
               <ion-fab-list side="bottom">
                   <button ion-fab>bawah</button>
                 </ion-fab-list>
-            </ion-fab> -->
+          
+  
+          </ion-fab>
         
           <ion-list>
             <ion-list-header>
@@ -197,175 +150,12 @@
 
           <ion-list>
             <ion-item>
-              <ion-avatar item-start>
+              <!-- <ion-thumbmail item-start>
                 <img src="data:image/jpeg;base64,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"/>
-              </ion-avatar>
+              </ion-thumbmail> -->
               <h2>title</h2>
               <p>deskropsi disini</p>
             </ion-item>
           </ion-list>
-
-          <ion-list>
-            <ion-item-sliding>
-              <ion-item>slider 1</ion-item>
-              
-              <ion-item-options>
-                <button ion-button color="danger">
-                  slider 
-                </button>
-              </ion-item-options>
-              
-            </ion-item-sliding>
-          </ion-list>
-
-          <ion-list>
-              <ion-item-sliding>
-                <ion-item>slider 2</ion-item>
-                
-                <ion-item-options>
-                  <button ion-button color="danger">
-                    call
-                  </button>
-                </ion-item-options>
-                
-              </ion-item-sliding>
-            </ion-list>
-
-            <ion-card>
-              <ion-card-header color="danger">
-                ini judul
-              </ion-card-header>
-                <img src ="https://via.placeholder.com/300x200"/>
-              <ion-list>
-                <button ion-item>
-                  <ion-icon name="text" item-start></ion-icon>
-                  hello 
-                </button>
-                <button ion-item>
-                    <ion-icon name="text" item-end></ion-icon>
-                    hello how are you
-                  </button>
-              </ion-list>
-              
-              <ion-card-content>
-                this is ionic card hua hua hua hahah aha aha ha ha a asd asd asd asf asf asfa sdfa sdfa
-              </ion-card-content>
-            </ion-card>
-
-
-            <ion-grid>
-              <ion-row>
-                <ion-col col-2>
-                  colom 
-                </ion-col>
-                <ion-col col-6>
-                  colom 1
-                </ion-col>
-                <ion-col col-4>
-                  colom 3
-                </ion-col>
-              </ion-row>
-              <ion-row>
-                <ion-col col-6>
-                  colom 
-                </ion-col>
-                <ion-col col-6>
-                  colom 1
-                </ion-col>
-              </ion-row>
-            </ion-grid>
-            
-            <ion-list>
-              <ion-list-header>
-                login
-              </ion-list-header>
-              <ion-item>
-                <ion-label floating>username</ion-label>
-                <ion-input type="text" [(ngModel)]="namaUser" ></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label floating>password</ion-label>
-                  <ion-input type="password" [(ngModel)]="password"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label floating>confirm password</ion-label>
-                  <ion-input type="password" [(ngModel)]="ConfirmPassword"></ion-input>
-              </ion-item>
-              
-              <ion-item>
-                <ion-label>
-                  user type
-                </ion-label>
-                <ion-select [(ngModel)]="userType">
-                  <ion-option value="admin" >admin</ion-option>
-                  <ion-option value="user" >user</ion-option>
-                </ion-select>
-              </ion-item>
-
-              <ion-item>
-                <ion-label>
-                  send notif
-                </ion-label>
-                <ion-checkbox [(ngModel)]="notif" ></ion-checkbox>
-              </ion-item>
-
-              <ion-list radio-group [(ngModel)]="gender">
-                <ion-list-header>
-                  gender
-                </ion-list-header>
-                <ion-item>
-                  <ion-label >male</ion-label>
-                  <ion-radio value = "male"></ion-radio>
-                </ion-item>
-                <ion-item>
-                    <ion-label >female</ion-label>
-                    <ion-radio value = "female"></ion-radio>
-                </ion-item>
-              </ion-list>
-
-            </ion-list>
-            <ion-grid>
-              <ion-row>
-                <ion-col>
-                    <button ion-button block outline (click)="cancel()">cancel</button>      
-                </ion-col>
-                <ion-col>
-                    <button ion-button block (click)="loading()">Loading</button>      
-                </ion-col>
-              </ion-row>
-
-              <ion-row>
-                  <ion-col>
-                      <button ion-button block outline (click)="alert()">alert</button>      
-                  </ion-col>
-                  <ion-col>
-                      <button ion-button block (click)="login()">login</button>      
-                  </ion-col>
-              </ion-row>
-
-              <ion-row>
-                <ion-col>
-                  <button ion-button block outline (click)="toast()">Toast</button>      
-                </ion-col>
-                <ion-col>
-                  <button ion-button block (click)="action()">action sheet</button>      
-                </ion-col>
-              </ion-row>
-
-              <ion-row>
-                <ion-col>
-                  <button ion-button block outline (click)="gotoOfiece()">ke ofice page</button>      
-                </ion-col>
-                <ion-col>
-                  <button ion-button block (click)="action()">action sheet</button>      
-                </ion-col>
-                <ion-col>
-                  <button ion-button block outline (click)="openModal()">open modal</button>      
-                </ion-col>
-              </ion-row>
-            </ion-grid>
-
-            
-
 
 </ion-content>

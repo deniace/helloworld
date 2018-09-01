@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, LoadingController, AlertController, ToastController, ActionSheetController,
+import { NavController, LoadingController, Loading, AlertController, ToastController, ActionSheetController,
 ModalController, PopoverController } from 'ionic-angular';
 import { OficePage } from '../ofice/ofice';
 import { ProfilPage } from './../profil/profil';
@@ -19,10 +19,6 @@ export class HomePage {
   userType:any;
   gender:any;
   notif:boolean;
-  users: any[];
-  infoCuaca: any={};
-  
-  namaKota : string = "bekasi";
 
   constructor(public navCtrl: NavController, public loadingController : LoadingController
     ,public alertControler: AlertController, public toastController:ToastController,
@@ -30,29 +26,11 @@ export class HomePage {
     public popoverController: PopoverController, public http:Http) {
     console.log("hello form cosntructor");
 
-    this.getDataCuaca();
+    this.getData();
   }
 
   getData(){
-    this.http.get("http://jsonplaceholder.typicode.com/users").subscribe((data)=>{
-      console.log(data.json()),
-      this.users = data.json();
-    }, (error)=>{
-      console.log("error");
-    });
-  }
-
-  getDataCuaca(){
-    let loading = this.loadingController.create();
-    loading.present();
-    this.http.get("http://api.openweathermap.org/data/2.5/weather?q="+this.namaKota +"&APPID=88b1c3dbf8660e06a9b8bd0be51b9aa3").subscribe((data)=>{
-      console.log(data.json()),
-      this.infoCuaca = data.json();
-      loading.dismiss();
-    }, (error)=>{
-      console.log("error");
-      loading.dismiss();
-    });
+    this.http.get("http://jsonplaceholder.typicode.com/users");
   }
 
   login(){

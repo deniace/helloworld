@@ -16,51 +16,7 @@
   <p>
     If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
   </p>
-  <!-- <ion-list *ngFor ="let tahi of users">
-    {{tahi.user}}
-  </ion-list> -->
 
-  <ion-list>
-    <ion-item>
-      <ion-input placeholder="Nama Kota" [(ngModel)]="namaKota"></ion-input>
-    </ion-item>
-  </ion-list>
-
-  <button no-margin ion-button block (click)="getDataCuaca()">tampilkan cuaca</button>
-
-  <ion-card no-margin>
-      <ion-item-divider color="light">
-        peta lokasi
-      </ion-item-divider>
-      <img src="https://maps.googleapis.com/maps/api/staticmap?center={{ namaKota }}&size=600x300"/>
-    </ion-card>
-
-  <ion-card no-margin>
-    <ion-item-divider color="light">
-      detil lokasi
-    </ion-item-divider>
-    <ion-item>kota : {{infoCuaca.name}}</ion-item>
-    <ion-item *ngIf="infoCuaca.sys">Kode Negara : {{infoCuaca.sys.country}}</ion-item>
-    <ion-item *ngIf="infoCuaca.coord">koordinat : {{ infoCuaca.coord.lon }} , {{infoCuaca.coord.lat}}</ion-item>
-  </ion-card>
-
-  <ion-card no-margin>
-    <ion-item-divider color="light">
-      detil cuaca
-    </ion-item-divider>
-    <ion-item *ngIf="infoCuaca.main">suhu tempratur : {{infoCuaca.main.temp}}</ion-item>
-    <ion-item *ngIf="infoCuaca.main">tekanan : {{ infoCuaca.main.pressure}}</ion-item>
-    <ion-item *ngIf="infoCuaca.main">kelembapan : {{infoCuaca.main.humidity}} %</ion-item>
-  </ion-card>
-
-  <ion-card no-margin *ngIf="infoCuaca.wind">
-      <ion-item-divider color="light" >
-        detil angin
-      </ion-item-divider>
-      <ion-item>kecepatan angin : {{ infoCuaca.wind.speed }}</ion-item>
-      <ion-item> sudut derajat arah angin : {{ infoCuaca.wind.deg }}</ion-item>
-    </ion-card>
-  
   <!-- <ion-button></ion-button> -->
   <!-- <button ion-button >Default</button>
 

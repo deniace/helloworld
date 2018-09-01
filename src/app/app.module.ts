@@ -6,20 +6,33 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { OficePage } from '../pages/ofice/ofice'
+import { ProfilPage } from '../pages/profil/profil';
+import { PopoverPage } from './../pages/popover/popover';
+
+import { HttpModule } from '@angular/http'
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    OficePage,
+    PopoverPage,
+    ProfilPage
+    
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    OficePage,
+    ProfilPage,
+    PopoverPage
   ],
   providers: [
     StatusBar,
